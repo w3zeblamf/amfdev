@@ -1,0 +1,257 @@
+//* Extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {
+	#header {
+		&-home {
+			height: 30rem;
+
+			.header-content {
+				padding-top: 4rem;
+
+				h1 {
+					font-size: 3.5rem;
+				}
+
+				.lead {
+					font-size: 1.6rem;
+				}
+
+				.btn-dark {
+					padding: 0.2rem 2rem;
+				}
+			}
+		}
+	}
+
+
+
+	#main-nav {
+		flex-direction: column;
+		align-items: center;
+
+		li {
+			padding: 1rem;
+		}
+	}
+
+	//About
+	#about {
+		&-me {
+			.about-info {
+				grid-template-areas:
+					'bioimage'
+					'bio';
+			}
+
+			.bio-image {
+				img {
+					display: none;
+				}
+			}
+
+			.bio {
+				border: none;
+			}
+		}
+	}
+
+	//Work Gallery
+	#work {
+		padding: 0;
+
+		.cards-wrappers {
+			flex-direction: column;
+			align-items: center;
+
+			.card {
+				width: 80%;
+				height: 40vw;
+				&-overlay {
+					&-heading {
+						display: none;
+					}
+					&-paragraph {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	//Contact
+	#contact {
+		&-a {
+			.text-fields {
+				grid-template-areas:
+					'name'
+					'subject'
+					'email'
+					'phone'
+					'message';
+			}
+
+			button[type='submit'] {
+				width: 100%;
+				padding: 0.5rem 0;
+				margin-top: 0.5rem;
+			}
+		}
+
+		&-b {
+			// Stack Grid Columns
+			.contact-info {
+				grid-template-columns: 1fr;
+			}
+
+			.contact-info div {
+				margin-bottom: 1rem;
+				padding-bottom: 1rem;
+				border-bottom: 1px $secondary-color solid;
+			}
+
+			.contact-info div:last-child {
+				border: none;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	//Footer
+	#main-footer {
+		height: 7rem;
+
+		.footer-content {
+			flex-direction: column;
+			padding: 1rem;
+			height: 5rem;
+		}
+	}
+}
+
+//* Small devices (portrait tablets and large phones, 601px to 768px)
+@media (min-width: 601px) and (max-width: 768px) {
+	#header {
+		//Header Home
+		&-home {
+			height: 30rem;
+
+			//Header Content
+			.header-content {
+				padding-top: 15%;
+
+			}
+		}
+	}
+
+	#main-nav {
+		li {
+			padding: 1rem 1rem;
+		}
+	}
+
+	#about {
+		&-me {
+			.about-info {
+				grid-template-areas:
+					'bioimage'
+					'bio';
+			}
+
+			.bio-image {
+				img {
+					display: none;
+				}
+
+				h2 {
+					margin-bottom: 1rem;
+				}
+
+				h3 {
+					margin-left: 1rem;
+				}
+			}
+
+			.bio {
+				border: none;
+			}
+		}
+	}
+
+	#work {
+		padding: 1rem 0;
+
+		.card {
+			&-overlay {
+				&-heading {
+					font-size: 25px;
+				}
+				&-paragraph {
+					font-size: 15px;
+					margin-bottom: 10px;
+				}
+				.btn-work {
+					font-size: 10px;
+					padding: 0.3rem 1.5rem;
+
+				}
+			}
+		}
+	}
+}
+
+//* Medium devices (landscape tablets, 769px to 991px)
+@media (min-width: 769px) and (max-width: 991px) {
+
+	#header {
+		//Header Home
+		&-home {
+			height: 35rem;
+
+			//Header Content
+			.header-content {
+				padding-top: 15%;
+			}
+		}
+	}
+
+	#work {
+		padding: 1rem 0;
+
+		.card {
+			&-overlay {
+				&-heading {
+					font-size: 30px;
+				}
+				&-paragraph {
+					font-size: 20px;
+					margin-bottom: 10px;
+				}
+				.btn-work {
+					font-size: 10px;
+					padding: 0.5rem 2.5rem;
+				}
+			}
+		}
+}
+}
+
+//* Large devices (laptops/desktops, 992px to 1119px)
+@media (min-width: 992) and (max-width: 1199px) {
+	//No changed needed
+ }
+
+//* Extra large devices (large laptops, desktops, widescreen 1200px and up)
+
+@media (min-width: 1200px) {
+	//No changed needed
+}
+
+//* Landscape
+
+@media (max-height: 580px) {
+	#header-home {
+		.header-content {
+			padding-top: 3rem;
+		}
+	}
+}

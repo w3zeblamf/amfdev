@@ -1,0 +1,356 @@
+@import 'config';
+@import 'utilities.scss';
+
+// General Style
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	scroll-behavior: smooth;
+	background: $white-color;
+	font-family: $font-dosis;
+	line-height: 1.6;
+}
+
+a {
+	text-decoration: none;
+	color: $primary-color;
+}
+
+ul {
+	list-style: none;
+}
+
+h2,
+h3,
+h4 {
+	text-transform: capitalize;
+}
+
+img {
+	width: 100%;
+	//This keep images in their container..!
+}
+
+// Logo
+#logo {
+	width: 130px;
+	height: 50px;
+	//In case of using text not an image
+	font-size: 30px;
+	color: $primary-color;
+	text-transform: capitalize;
+
+	span {
+		color: $tertiary-color;
+	}
+
+	ion-icon {
+		color: $tertiary-color;
+		font-size: 30px;
+	}
+}
+// EO Logo
+
+// Main Nav
+#main-nav {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1rem;
+
+
+	ul {
+		display: flex;
+	}
+
+	li {
+		padding: 1rem 1.5rem;
+	}
+
+	a {
+		font-size: 1.2rem;
+		text-decoration: none;
+		color: $secondary-color;
+		text-transform: capitalize;
+		font-weight: 800;
+		border-bottom: 3px transparent solid;
+		//border-bottom: transparent: avoid that the hover effect just push the text upwards to give the border.
+		padding-bottom: 0.5rem;
+		transition: border-color 0.5s;
+
+		&:hover {
+			border-color: $tertiary-color;
+		}
+	}
+}
+// EO Main Nav
+
+// Header
+#header {
+	// Header Home
+	&-home {
+		height: 100vh;
+		color: $secondary-color;
+		background: $bg-header-img no-repeat center right/cover;
+
+		// Header Content
+		.header-content {
+			text-align: center;
+			padding-top: 20%;
+
+			h1 {
+				font-size: 4rem;
+				line-height: 1.2;
+				margin-bottom: 0.5rem;
+
+				ion-icon {
+					color: $tertiary-color;
+				}
+				span {
+					font-size: 3rem;
+					color: $tertiary-color;
+				}
+			}
+		}
+	}
+}
+// EO header
+
+// About Me
+#about {
+	&-me {
+		border-top: 2px solid $light-gray;
+
+		color: $secondary-color;
+
+		.about-info {
+			display: grid;
+			grid-template-areas: 'bioimage bio bio';
+			grid-gap: 1.2rem;
+		}
+
+		.bio-image {
+			img {
+				width: 400px;
+				height: 400px;
+			}
+
+			grid-area: bioimage;
+
+			h1 {
+				font-weight: 500;
+				letter-spacing: 1px;
+			}
+
+			h2 {
+				font-weight: 600;
+				letter-spacing: 1px;
+			}
+
+			h3 {
+				font-size: 1.2rem;
+				font-weight: 300;
+				text-align: left;
+				margin-bottom: 0.5rem;
+
+				i {
+					font-size: 1.3rem;
+					margin-right: 0.2rem;
+				}
+
+				span {
+					color: $tertiary-color;
+				}
+			}
+		}
+
+		.bio {
+			grid-area: bio;
+			border-left: 3px solid $light-gray;
+			padding: 0.8rem;
+
+			h1 {
+				font-weight: 300;
+				color: $secondary-color;
+			}
+
+			h2 {
+				font-weight: 600;
+				letter-spacing: 1px;
+			}
+
+			h3 {
+				font-size: 1.2rem;
+				font-weight: 400;
+				text-align: left;
+				color: $secondary-color;
+
+				i {
+					font-size: 1.3rem;
+					margin-right: 0.2rem;
+				}
+
+				span {
+					color: $tertiary-color;
+				}
+			}
+
+			.progress {
+				overflow: hidden;
+				height: 20px;
+				background: $light-gray;
+				border-radius: 5px;
+				margin-bottom: 0.3rem;
+
+				div {
+					height: 100%;
+					text-align: center;
+					background: #3f3d56;
+				}
+			}
+		}
+	}
+}
+// EO About Me
+
+// Work
+#work {
+	background: #fff;
+	color: $secondary-color;
+
+	.cards-wrappers {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+// EO Work
+
+// Contact
+#contact {
+	//Section A
+	&-a {
+		margin-top: 10px;
+		.text-fields {
+			display: grid;
+			grid-template-areas:
+				'name email'
+				'subject phone'
+				'message message';
+			grid-gap: 1.2rem;
+			margin-bottom: 1.2rem;
+
+			input,
+			textarea {
+				border-radius: 5px;
+				border: 2px solid $light-gray;
+				font-family: $font-dosis;
+				font-size: 1rem;
+			}
+
+			input[type='text']:focus {
+				background-color: #fff;
+			}
+
+			// Grid Areas
+
+			.name-input {
+				grid-area: name;
+			}
+			.subject-input {
+				grid-area: subject;
+			}
+			.email-input {
+				grid-area: email;
+			}
+			.phone-input {
+				grid-area: phone;
+			}
+			.message-input {
+				grid-area: message;
+				height: 100px;
+			}
+
+			.text-input {
+				padding: 0.5rem 1rem;
+			}
+		}
+
+		button[type='submit'] {
+			width: 50%;
+			margin-top: 0.5rem;
+			font-size: 1rem;
+		}
+	}
+
+	//Section B
+	&-b {
+		.contact-info {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			text-align: center;
+			color: $primary-color;
+
+			i {
+				font-size: 2rem;
+				cursor: pointer;
+			}
+
+			i:hover {
+				color: $tertiary-color;
+				transition: all 0.5s;
+			}
+		}
+	}
+}
+// EO Contact
+
+// Footer
+#main-footer {
+	background: $footer-color;
+	color: $light-gray;
+	height: 5rem;
+
+	.footer-content {
+		display: flex;
+		justify-content: space-between;
+		height: 5rem;
+		align-items: center;
+
+		p {
+			font-size: 1.5rem;
+		}
+
+		a {
+			color: $light-gray;
+		}
+
+		span {
+			font-weight: bold;
+			color: $tertiary-color;
+		}
+
+		.social .fab {
+			margin-right: 1rem;
+			font-size: 1.8rem;
+			height: 20px;
+			width: 20px;
+			line-height: 20px;
+			text-align: center;
+			padding: 0.5rem;
+			cursor: pointer;
+
+			&:hover {
+				color: $tertiary-color;
+				font-size: 2rem;
+				transition: all 0.5s;
+			}
+		}
+	}
+}
+// EO Footer
+
+// Media Queries
+@import 'media.scss';

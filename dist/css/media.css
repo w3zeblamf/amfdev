@@ -1,0 +1,21 @@
+@media (min-width: 601px) and (max-width: 768) {
+  #header-home {
+    height: 30rem; }
+    #header-home .header-content {
+      padding-top: 15%; }
+  #main-nav li {
+    padding: 1rem 1rem; }
+  #about-me .about-info {
+    grid-template-areas: 'bioimage' 'bio'; }
+  #about-me .bio-image img {
+    display: none; }
+  #about-me .bio-image h2 {
+    margin-bottom: 1rem; }
+  #about-me .bio-image h3 {
+    margin-left: 1rem; }
+  #about-me .bio {
+    border: none; } }
+
+@media (max-height: 580px) {
+  #header-home .header-content {
+    padding-top: 3rem; } }

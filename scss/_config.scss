@@ -1,0 +1,35 @@
+//Variables
+
+$website-width: 1280px;
+
+//Colors
+$primary-color: #262534;
+$secondary-color: #3f3d56;
+$tertiary-color: #28a745;
+$light-gray: #dcdddf;
+$white-color: #fff;
+$medium-color: #ccc;
+$footer-color: #191822;
+
+//Fonts
+$font-dosis: 'Dosis', sans-serif;
+$font-dancingScript: 'Dancing Script', cursive;
+$font-josefinSans: 'Josefin Sans', sans-serif;
+$font-nunito: 'Nunito', sans-serif;
+
+//Images
+$bg-header-img: url('../images/header-img.jpg');
+$bg-about-img: url('../images/about-img.jpg');
+
+
+@mixin flexLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin textStyles($transform: uppercase) {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: $transform;
+}

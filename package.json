@@ -1,0 +1,14 @@
+{
+  "name": "albezf-portfolio",
+  "version": "1.0.0",
+  "description": "Web Dev Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recorsive"
+  },
+  "author": "Albez Figueroa",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

@@ -1,0 +1,216 @@
+.container {
+	max-width: $website-width;
+	padding: 0 1.5rem;
+	margin: auto;
+	overflow: hidden; //Nothing goes out its container.
+}
+
+// Buttons (Extend selector or extend style)
+%btn-shared {
+	display: inline-block;
+	padding: 0.6rem 2rem;
+	transition: all 0.5s;
+	border: none;
+	cursor: pointer;
+	border-radius: 0.33rem;
+	font-size: 1rem;
+}
+
+.btn {
+	&-main {
+		@extend %btn-shared;
+		color: $light-gray;
+		background-color: $tertiary-color;
+	}
+
+	&-light {
+		@extend %btn-shared;
+		color: $tertiary-color;
+		background-color: $light-gray;
+	}
+
+	&-dark {
+		@extend %btn-shared;
+		color: $light-gray;
+		background-color: $secondary-color;
+	}
+}
+
+//Any class, any button with the class of BTN dash ('btn-'),  will be in effect for the hover effect.
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover {
+	background-color: $primary-color;
+	color: $light-gray;
+	transition: all 0.5s;
+}
+
+// Work overlay/img
+%fullSpace {
+	width: 100%;
+	height: 100%;
+}
+
+// Backgrounds
+
+.bg {
+	&-primary {
+		background: $primary-color;
+	}
+	&-secondary {
+		background: $secondary-color;
+	}
+	&-tertiary {
+		background: $tertiary-color;
+	}
+
+	&-light {
+		background: $light-gray;
+	}
+}
+
+.lead {
+	font-size: 1.8rem;
+	margin-bottom: 2rem;
+	font-family: $font-dancingScript;
+	color: $secondary-color;
+}
+
+.text-center {
+	text-align: center;
+}
+
+// Padding
+
+.py {
+	&-1 {
+		padding: 1rem 0;
+	}
+	&-2 {
+		padding: 2rem 0;
+	}
+	&-3 {
+		padding: 3rem 0;
+	}
+	&-4 {
+		padding: 4rem 0;
+	}
+}
+
+// Margin
+
+.my {
+	&-1 {
+		margin: 1rem 0;
+	}
+	&-2 {
+		margin: 2rem 0;
+	}
+	&-3 {
+		margin: 3rem 0;
+	}
+	&-4 {
+		margin: 4rem 0;
+	}
+}
+
+.section-title {
+	font-size: 2rem;
+	display: block;
+	padding-bottom: 0.5rem;
+	text-align: center;
+	font-weight: 500;
+	text-transform: capitalize;
+	color: $secondary-color;
+}
+
+.bottom-line {
+	height: 2px;
+	width: 3rem;
+	background: $tertiary-color;
+	display: block;
+	margin: 0 auto 1rem auto;
+}
+
+//Flex Grid
+.section-padding {
+	padding: 20px 20px 40px;
+}
+
+.flex-grid .row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+}
+
+.flex-grid .column {
+	flex: 20%;
+	max-width: 25%;
+	padding: 0 4px;
+}
+
+// EO Flex Grid
+
+//Work Gallery
+.card {
+	width: 33.3333%;
+	height: 20vw;
+	position: relative;
+	overflow: hidden;
+
+	&:hover .card-overlay {
+		left: 0;
+	}
+
+	&-overlay {
+		position: absolute;
+		top: 0;
+		left: -100%;
+		background-color: rgba($secondary-color, 0.6);
+		color: $light-gray;
+		z-index: 10;
+		@include flexLayout;
+		flex-direction: column;
+		@extend %fullSpace;
+		transition: left 0.7s;
+
+		&-heading {
+			font-family: $font-nunito;
+			font-size: 40px;
+			@include textStyles(capitalize);
+		}
+
+		&-paragraph {
+			font-family: $font-josefinSans;
+			font-size: 25px;
+			margin-bottom: 30px;
+			@include textStyles(capitalize);
+		}
+
+		//Link
+		.btn-work {
+			display: inline-block;
+			padding: 0.5rem 2.5rem;
+			color: $primary-color;
+			background-color: $light-gray;
+			border: 1px solid $secondary-color;
+			border-radius: 0.33rem;
+			font-family: $font-dosis;
+			font-size: 14px;
+			font-weight: 500;
+			text-transform: capitalize;
+			letter-spacing: 1px;
+			outline: none;
+			cursor: pointer;
+
+
+		}
+	}
+
+	&-img {
+		@extend %fullSpace;
+		object-fit: cover;
+		opacity: 0.8;
+	}
+}
+//EO Work Gallery
